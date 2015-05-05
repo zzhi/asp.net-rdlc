@@ -1,0 +1,444 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>接口</title>
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+
+    <script type="text/javascript">
+
+        var str = "EnergyProfile.aspx?" +
+            "templatename=&reportname=%E8%83%BD%E8%80%97%E6%8A%A5%E5%91%8A" +
+            "&categoryname=%E6%80%BB%E8%83%BD%E8%80%97" +
+            "&username=Administrator" +
+            "&spaceguids=d52ea43f-ee8b-b100-f2f4-33eefbedfb44,4284e56e-d9b9-dd12-56cc-a646898dc230" +
+            "&period=day&spaceguids=" +
+            "&meterguids=9f78b3e5-0738-d8e6-7450-1e1af1778c53,8317c8bf-3cd1-84d5-b959-ab729cba243f" +
+            "&dateFrom=2015-01-19" +
+            "&dateTo=2015-03-11" +
+            "&refs=null&categoryguid=" +
+            "&calculatorType=0" +
+            "&unitArea=off&chartType=column";
+        //能耗报告
+        var strEnergyProfile = "/CommonReport/EnergyProfilePage.aspx?"
+                + "period=hour&"
+                + "spaceguids=d52ea43f-ee8b-b100-f2f4-33eefbedfb44&"
+                + "meterguids=&"
+                + "dateFrom=2014-12-12 00:00&"
+                + "dateTo=2015-06-15 23:00&"
+                + "refs=1,2&"
+                + "categoryguid=dbe6b99e-3f89-45d2-9c3c-e9e7b75d7cab&"
+                + "calculatorType=1&"
+                + "unitArea=on&"
+                + "chartType=column&"
+                + "templatename=东区1号楼&"
+                + "reportname=能耗报告&"
+                + "categoryname=总能耗&"
+                + "username=胡俊超"
+            ;
+
+
+
+        //能耗排名
+        var strRanking = "/CommonReport/EnergyRankingPage.aspx?"
+                + "period=month&"
+                + "spaceguids=4c89ac00-f46a-f2a8-7019-4aefa890bf51&"
+                + "meterguids=04a2fa7b-2e4a-5b68-0c7a-9203c2b0332f&"
+                + "dateFrom=2014-12-01&"
+                + "dateTo=2015-04-21&"
+                + "categoryguid=dbe6b99e-3f89-45d2-9c3c-e9e7b75d7cab&"
+                + "calculatorType=1&"
+                + "unitArea=off&"
+                + "templatename=test1&"
+                + "reportname=test2&"
+                + "categoryname=test3&"
+                + "username=胡俊超"
+            ;
+
+
+        //能耗占比
+        var strProportion = "/CommonReport/EnergyProportion.aspx?"
+                + "period=day&"
+                + "spaceguids=4c89ac00-f46a-f2a8-7019-4aefa890bf51&"
+                + "meterguids=04a2fa7b-2e4a-5b68-0c7a-9203c2b0332f&"
+                + "dateFrom=2014-04-01&"
+                + "dateTo=2015-04-21&"
+                + "categoryguid=&"
+                + "calculatorType=1&"
+                + "unitArea=off&"
+                + "templatename=test1&"
+                + "reportname=test2&"
+                + "categoryname=test3&"
+                + "username=胡俊超"
+            ;
+
+        //分项能耗
+        var strEnergyCategories = "/CommonReport/EnergyCategoriesAnalysis.aspx?"
+                + "period=hour&"
+                + "spaceguids=d52ea43f-ee8b-b100-f2f4-33eefbedfb44&"
+                + "dateFrom=2014-06-17 00:00&"
+                + "dateTo=2015-06-17 23:00&"
+                + "categoryguid=dbe6b99e-3f89-45d2-9c3c-e9e7b75d7cab&"
+                + "calculatorType=0&"
+                + "unitArea=on&"
+                + "templatename=test1&"
+                + "reportname=test2&"
+                + "categoryname=test3&"
+                + "username=胡俊超"
+            ;
+
+        //日均负荷
+        var strDaily = "/CommonReport/Daily.aspx?"
+                + "spaceguids=4c89ac00-f46a-f2a8-7019-4aefa890bf51,08cd2da4-c781-a190-62d7-53df6fb0a21c&"
+                + "meterguids=f2c92604-9078-b374-8f72-10fc377011f4,04a2fa7b-2e4a-5b68-0c7a-9203c2b0332f&"
+                + "dateFrom=2015-03-01&"
+                + "unitArea=on&"
+                + "templatename=test1&"
+                + "reportname=test2&"
+                + "categoryname=test3&"
+                + "username=胡俊超"
+            ;
+
+
+        //一次能源折算
+        var strPrimaryEnergy = "/CommonReport/PrimaryEnergyPage.aspx?"
+                + "period=day&"
+                + "spaceguids=4c89ac00-f46a-f2a8-7019-4aefa890bf51&"
+                + "meterguids=04a2fa7b-2e4a-5b68-0c7a-9203c2b0332f&"
+                + "dateFrom=2014-04-01&"
+                + "dateTo=2015-04-21&"
+                + "energyType=3&"
+                + "unitArea=off&"
+                + "templatename=test1&"
+                + "reportname=test2&"
+                + "categoryname=test3&"
+                + "username=胡俊超"
+            ;
+
+        //回归分析
+        var strRegressionAnalysis = "/CommonReport/RegressionAnalysisPage.aspx?"
+                + "period=day&"
+                + "X=9a6cc0de-75d8-d431-525a-3b837552e019&"
+                + "XType=space&"
+                + "Y=04a2fa7b-2e4a-5b68-0c7a-9203c2b0332f&"
+                + "YType=meter&"
+                + "dateFrom=2014-04-01&"
+                + "dateTo=2015-04-21&"
+                + "templatename=test1&"
+                + "reportname=test2&"
+                + "categoryname=test3&"
+                + "username=胡俊超"
+            ;
+
+        //能耗比较(不同能耗在同一时间段比较)
+        var strcompsametime = "/CommonReport/ComparisionSametimePage.aspx?"
+                + "period=day&"
+                + "spaceguids=4c89ac00-f46a-f2a8-7019-4aefa890bf51&"
+                + "meterguids=04a2fa7b-2e4a-5b68-0c7a-9203c2b0332f&"
+                + "dateFrom=2014-04-01&"
+                + "dateTo=2015-04-21&"
+                + "categoryguid=&"
+                + "calculatorType=0&"
+                + "unitArea=off&" + "templatename=test1&"
+                + "reportname=test2&"
+                + "categoryname=test3&"
+                + "username=胡俊超"
+            ;
+
+
+        //能耗比较(不同能耗在同一时间段比较)
+        var strcompdifftime = "/CommonReport/ComparisionDifferenttimePage.aspx?"
+                + "period=day&"
+                + "spaceguids=&"
+                + "meterguids=04a2fa7b-2e4a-5b68-0c7a-9203c2b0332f&"//
+                + "dateFrom=2014-04-01&"
+                + "dateTo=2015-04-11&"
+                + "dateFrom1=2014-04-12&"
+                + "dateTo1=2015-04-22&"
+                + "categoryguid=&"
+                + "calculatorType=0&"
+                + "unitArea=off&" + "templatename=test1&"
+                + "reportname=test2&"
+                + "categoryname=test3&"
+                + "username=胡俊超"
+            ;
+
+
+        $(document).ready(function () {
+                $("#A0").on("click", function () {
+                    window.open(str);
+                });
+                $("#A1").on("click", function () {
+                    window.open(strRanking);
+                });
+                $("#A2").on("click", function () {
+                    window.open(strProportion);
+                });
+                $("#A3").on("click", function () {
+                    window.open(strEnergyCategories);
+                });
+                $("#A4").on("click", function () {
+                    window.open(strDaily);
+                });
+                $("#A5").on("click", function () {
+                    window.open(strPrimaryEnergy);
+                });
+                $("#A6").on("click", function () {
+                    window.open(strRegressionAnalysis);
+                });
+                $("#A7").on("click", function () {
+                    window.open(strcompsametime);
+                });
+                $("#A8").on("click", function () {
+                    window.open(strcompdifftime);
+                });
+            }
+        );
+    </script>
+</head>
+<body>
+    <div>
+        <a id="A0" href="#" >(1)能耗报告</a>
+        <ul>
+            <li>period：日期类型(year,month,day,hour)</li>
+            <li>spaceguids：管理组(guids)</li>
+            <li>meterguids：管理项(guids)</li>
+            <li>dateFrom开始日期</li>
+            <li>dateTo结束日期</li>
+            <li>refs：参考点(1,2,3)</li>
+            <li>categoryguid：能耗分类(guid)</li>
+            <li>unitArea:是否按单位面积(off/on)</li>
+            <li>calculatorType：计算类型(0,能耗；1,费用)</li>
+            <li>chartType:图表类型(column或者line)</li>
+            <li>templatename：模板名称</li>
+            <li>reportname:报告名称</li>
+            <li>categoryname能耗分类</li>
+            <li>username用户名</li>
+        </ul>
+        <label>示例</label>
+        <span>
+            http://10.111.212.4:100/EnergyProfilePage.aspx?
+            period=day&
+            spaceGuids=4c89ac00-f46a-f2a8-7019-4aefa890bf51,08cd2da4-c781-a190-62d7-53df6fb0a21c&
+            meterguids=f2c92604-9078-b374-8f72-10fc377011f4,04a2fa7b-2e4a-5b68-0c7a-9203c2b0332f&
+            dateFrom=2014-04-01&
+            dateTo=2014-04-21&
+            refs=1,2&
+            categoryguid=dbe6b99e-3f89-45d2-9c3c-e9e7b75d7cab&
+            unitArea=off&
+            calculatorType=0&
+            chartType=column&
+
+        </span>
+    </div>
+    <br />
+    <div>
+        <a id="A1" href="#">
+            (2)能耗排名
+        </a>
+        <ul>
+            <li>spaceguids：管理组(guids)</li>
+            <li>meterguids：管理项(guids)</li>
+            <li>dateFrom开始日期</li>
+            <li>dateTo结束日期</li>
+            <li>categoryguid：能耗分类(guid)</li>
+            <li>unitArea:是否按单位面积(off/on)</li>
+            <li>calculatorType：计算类型(0,能耗；1,费用)</li>
+            <li>order:排序(desc或者asc)</li>
+            <li>templatename：模板名称</li>
+            <li>reportname:报告名称</li>
+            <li>categoryname能耗分类</li>
+            <li>username用户名</li>
+        </ul>
+        <label>示例</label>
+        <span>
+            http://10.111.212.4:100/EnergyRankingPage.aspx?
+            spaceGuids=4c89ac00-f46a-f2a8-7019-4aefa890bf51,08cd2da4-c781-a190-62d7-53df6fb0a21c&
+            meterguids=f2c92604-9078-b374-8f72-10fc377011f4,04a2fa7b-2e4a-5b68-0c7a-9203c2b0332f&
+            dateFrom=2014-04-01&
+            dateTo=2014-04-21&
+            categoryguid=&
+            unitArea=off&
+            calculatorType=1&
+            order=asc
+        </span>
+    </div>
+    <br />
+    <div>
+        <a id="A2" href="#">(3)能耗占比</a>
+        <ul>
+            <li>spaceguids：管理组(guids)</li>
+            <li>meterguids：管理项(guids)</li>
+            <li>dateFrom开始日期</li>
+            <li>dateTo结束日期</li>
+            <li>categoryguid：能耗分类(guid)</li>
+            <li>unitArea:是否按单位面积(off/on)</li>
+            <li>calculatorType：计算类型(0,能耗；1,费用)</li>
+        </ul>
+        <label>示例</label>
+        <span>
+            http://10.111.212.4:100/EnergyProportion.aspx?
+            spaceGuids=4c89ac00-f46a-f2a8-7019-4aefa890bf51,08cd2da4-c781-a190-62d7-53df6fb0a21c&
+            meterguids=f2c92604-9078-b374-8f72-10fc377011f4,04a2fa7b-2e4a-5b68-0c7a-9203c2b0332f&
+            dateFrom=2014-04-01&
+            dateTo=2014-04-21&
+            categoryguid=&
+            unitArea=off&
+            calculatorType=1&
+        </span>
+    </div>
+    <br />
+    <div>
+        <a id="A3" href="#">(4)能耗分项</a>
+        <ul>
+            <li>spaceguids：管理组(guids)</li>
+            <li>dateFrom开始日期</li>
+            <li>dateTo结束日期</li>
+            <li>categoryguid：能耗分类(guid)</li>
+            <li>unitArea:是否按单位面积(off/on)</li>
+            <li>calculatorType：计算类型(0,能耗；1,费用)</li>
+        </ul>
+        <label>示例</label>
+        <span>
+            http://10.111.212.4:100/EnergyCategoriesAnalysis.aspx?
+            spaceGuids=9a6cc0de-75d8-d431-525a-3b837552e019&
+            dateFrom=2014-04-01&
+            dateTo=2014-04-21&
+            categoryguid=&
+            unitArea=off&
+            calculatorType=1&
+        </span>
+    </div>
+
+    <br />
+    <div>
+        <a id="A4" href="#">(5)日均负荷</a>
+        <ul>
+            <li>spaceguids：管理组(guids)</li>
+            <li>meterguids：管理项(guids)</li>
+            <li>dateFrom开始日期</li>
+            <li>unitArea:是否按单位面积(off/on)</li>
+        </ul>
+        <label>示例</label>
+        <span>
+            http://10.111.212.4:100/Daily.aspx?
+            spaceGuids=4c89ac00-f46a-f2a8-7019-4aefa890bf51,08cd2da4-c781-a190-62d7-53df6fb0a21c&
+            meterguids=f2c92604-9078-b374-8f72-10fc377011f4,04a2fa7b-2e4a-5b68-0c7a-9203c2b0332f&
+            dateFrom=2015-03-01&
+            dateTo=2015-04-21&
+            unitArea=off
+        </span>
+    </div>
+    <br />
+    <div>
+        <a id="A5" href="#">
+            (6)一次能源折算
+        </a>
+        <ul>
+
+            <li>period=周期</li>
+            <li>spaceguids：管理组(guids)</li>
+            <li>meterguids：管理项(guids)</li>
+            <li>dateFrom开始日期</li>
+            <li>dateTo结束日期</li>
+            <li>energyType：能耗类型( coal, co2,backcoal, oil)</li>
+            <li>unitArea:是否按单位面积(off/on)</li>
+            <li>templatename模板名称</li>
+            <li>reportnam报表名称</li>
+            <li>categoryname：能耗分类</li>
+            <li>username:用户名</li>
+        </ul>
+        <label>示例</label>
+        <span>
+            http://10.111.212.4:100/PrimaryEnergyPage.aspx?
+            spaceGuids=4c89ac00-f46a-f2a8-7019-4aefa890bf51,08cd2da4-c781-a190-62d7-53df6fb0a21c&
+            meterguids=f2c92604-9078-b374-8f72-10fc377011f4,04a2fa7b-2e4a-5b68-0c7a-9203c2b0332f&
+            dateFrom=2014-04-01&
+            dateTo=2014-04-21&
+            energyType=coal&
+            unitArea=off&
+        </span>
+    </div>
+    <br />
+    <div>
+        <a id="A6" href="#">
+            (7)回归分析
+        </a>
+        <ul>
+            <li>period：日期类型(year,month,day,hour)</li>
+            <li>X：X轴(guid或id)</li>
+            <li>XType:X轴类型(0(管理组),1(管理项),2(参考值))</li>
+            <li>Y：Y轴(guid或id)</li>
+            <li>YType:Y轴类型(0(管理组),1(管理项),2(参考值))</li>
+            <li>dateFrom开始日期</li>
+            <li>dateTo结束日期</li>
+        </ul>
+        <label>示例</label>
+        <span>
+            http://10.111.212.4:100/RegressionAnalysisPage.aspx?
+            period=day&
+            X=9a6cc0de-75d8-d431-525a-3b837552e019&
+            XType=0&
+            Y=04a2fa7b-2e4a-5b68-0c7a-9203c2b0332f&
+            YType=1&
+            dateFrom=2014-04-01&
+            dateTo=2014-04-21&
+        </span>
+    </div>
+    <br />
+    <div>
+        <a id="A7" href="#">(8)能耗比较(不通能耗在同一时间的比较)</a>
+        <ul>
+            <li>period：日期类型(year,month,day,hour)</li>
+            <li>spaceguids：管理组(guids)</li>
+            <li>meterguids：管理项(guids)</li>
+            <li>dateFrom开始日期</li>
+            <li>dateTo结束日期</li>
+            <li>categoryguid：能耗分类(guid)</li>
+            <li>unitArea:是否按单位面积(off/on)</li>
+            <li>calculatorType：计算类型(0,能耗；1,费用)</li>
+        </ul>
+        <label>示例</label>
+        <span>
+            http://10.111.212.4:100/ComparisionSametimePage.aspx?
+            period=day&
+            spaceGuids=4c89ac00-f46a-f2a8-7019-4aefa890bf51,08cd2da4-c781-a190-62d7-53df6fb0a21c&
+            meterguids=f2c92604-9078-b374-8f72-10fc377011f4,04a2fa7b-2e4a-5b68-0c7a-9203c2b0332f&
+            dateFrom=2014-04-01&
+            dateTo=2014-04-21&
+            categoryguid=dbe6b99e-3f89-45d2-9c3c-e9e7b75d7cab&
+            unitArea=off&
+            calculatorType=0
+        </span>
+    </div>
+    <br />
+    <div>
+        <a id="A8" href="#">(9)能耗比较(能耗在不同时间的比较)</a>
+        <ul>
+            <li>period：日期类型(year,month,day,hour)</li>
+            <li>spaceguids：管理组(guids)</li>
+            <li>meterguids：管理项(guids)</li>
+            <li>dateFrom开始日期</li>
+            <li>dateTo结束日期</li>
+            <li>dateFrom1开始日期</li>
+            <li>dateTo1结束日期</li>
+            <li>categoryguid：能耗分类(guid)</li>
+            <li>unitArea:是否按单位面积(off/on)</li>
+            <li>calculatorType：计算类型(0,能耗；1,费用)</li>
+        </ul>
+        <label>示例</label>
+        <span>
+            http://10.111.212.4:100/ComparisionDifferenttimePage.aspx?
+            period=day&
+            spaceGuids=4c89ac00-f46a-f2a8-7019-4aefa890bf51&
+            meterguids=&
+            dateFrom=2014-04-01&
+            dateTo=2014-04-11&
+            dateFrom1=2014-04-12&
+            dateTo1=2014-04-22&
+            categoryguid=&
+            unitArea=off&
+            calculatorType=0
+        </span>
+    </div>
+</body>
+</html>

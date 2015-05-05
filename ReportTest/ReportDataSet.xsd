@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ReportDataSet" targetNamespace="http://tempuri.org/ReportDataSet.xsd" xmlns:mstns="http://tempuri.org/ReportDataSet.xsd" xmlns="http://tempuri.org/ReportDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ReportDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ReportDataSet" msprop:Generator_UserDSName="ReportDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TotalEnergy" msprop:Generator_TableClassName="TotalEnergyDataTable" msprop:Generator_TableVarName="tableTotalEnergy" msprop:Generator_TablePropName="TotalEnergy" msprop:Generator_RowDeletingName="TotalEnergyRowDeleting" msprop:Generator_RowChangingName="TotalEnergyRowChanging" msprop:Generator_RowEvHandlerName="TotalEnergyRowChangeEventHandler" msprop:Generator_RowDeletedName="TotalEnergyRowDeleted" msprop:Generator_UserTableName="TotalEnergy" msprop:Generator_RowChangedName="TotalEnergyRowChanged" msprop:Generator_RowEvArgName="TotalEnergyRowChangeEvent" msprop:Generator_RowClassName="TotalEnergyRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="tolcoal" msprop:Generator_ColumnVarNameInTable="columntolcoal" msprop:Generator_ColumnPropNameInRow="tolcoal" msprop:Generator_ColumnPropNameInTable="tolcoalColumn" msprop:Generator_UserColumnName="tolcoal" type="xs:double" minOccurs="0" />
+              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" type="xs:string" minOccurs="0" />
+              <xs:element name="dtime" msprop:Generator_ColumnVarNameInTable="columndtime" msprop:Generator_ColumnPropNameInRow="dtime" msprop:Generator_ColumnPropNameInTable="dtimeColumn" msprop:Generator_UserColumnName="dtime" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
